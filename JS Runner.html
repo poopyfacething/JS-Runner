@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Runner</title>
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: #00ffcc;
+            margin: 50px;
+        }
+        textarea {
+            width: 80%;
+            height: 200px;
+            background: #222;
+            color: #00ffcc;
+            border: 2px solid #00ffcc;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #00ffcc;
+            color: #121212;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #009988;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>JavaScript Runner</h1>
+    <textarea id="code" placeholder="Enter JavaScript code here..."></textarea><br>
+    <button onclick="runCode()">Run</button>
+
+    <script>
+        function runCode() {
+            const code = document.getElementById('code').value;
+            const newTab = window.open("about:blank");
+            newTab.document.write(`<script>${code}\x3C/script>`);
+            newTab.document.close();
+        }
+    </script>
+</body>
+</html>
